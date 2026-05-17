@@ -6,6 +6,54 @@ Contributions matter here in a way they don't matter on most projects. The field
 
 This is research code that works. It is not polished product code. We ship fast, things break, numbers shift. That's the deal. If you want stability, wait for v1.
 
+## What This Project Is And Isn't
+
+We want to be honest with anyone considering contributing. Open source attracts people who want to work on important things. Whether this project counts as that is your call, not ours. Here is the real picture.
+
+### What's actually real about this work
+
+We named a phenomenon that genuinely exists and didn't have a unified name in the research literature. Naming things is how fields get built. The framing contribution is modest but real.
+
+We built a working detector. The code runs, the bench runs, the IteraTeR evaluation runs, and the numbers are reproducible for under two dollars in API credit. Most NLP papers have less reproducible infrastructure than what we shipped.
+
+We did the harder thing most research projects skip. We tested against third-party human-labeled data and reported the honest number. F1 dropped from 94 to 68 percent. Cohen's kappa came in at 0.45, moderate agreement with humans. We didn't hide this. We made the gap the headline finding.
+
+The taxonomy is grounded in actual linguistic theory (Horn, Searle, Hyland, Halliday, Grosz and Sidner), not stuff we invented.
+
+### What's overhyped, including by us sometimes
+
+We have not solved intent corruption. We named one slice of the problem, built one detector, and showed it works partially. The actual problem of AI silently changing user meaning at production scale is wide open.
+
+The 94 percent F1 on the synthetic benchmark is in-distribution performance against weak labels we derived from upstream datasets. Without the IteraTeR validation showing 68 percent F1 against human ground truth, this would be a much thinner contribution.
+
+The "first paper on intent corruption" framing is true in a narrow sense. There's a real chance someone at a larger lab has been working on something adjacent and hasn't published yet. There's also a real chance our terminology gets renamed by a more senior researcher when they pick it up. Most attempted-naming papers don't have their terms stick. We hope ours does. We don't know yet.
+
+Our marketing on Instagram and elsewhere calls this "paper one of five." That's only true if we, or contributors, actually write papers two through five. If we don't, this becomes paper one of one, and most papers one of one are forgotten within two years.
+
+### What we'd say if we were peer-reviewing this ourselves
+
+We'd accept it with revisions to a second-tier conference (ACL Findings, EMNLP Findings, COLING) or a strong workshop. We would not accept it to ACL main track or EMNLP main track in current form. The reasons we'd flag:
+
+The taxonomy needs a saturation study. The twelve categories are inductive, not validated against held-out in-the-wild data.
+
+The bench is weakly supervised. The IteraTeR result is the credible number, not the 94 percent on ICOR-Bench.
+
+Five of twelve categories have only four examples in the bench. That's a structural hole, not just future work.
+
+There's no user study yet. The claim that detecting intent corruption helps users is theoretical.
+
+The architectural diagnosis (intent_drift catch-all dominance, NLI overfiring on coherence) is good but unverified. We hypothesize the fix but haven't tested whether the fix actually closes the gap.
+
+### What this means for you as a contributor
+
+If you contribute meaningfully to fixing any of the issues above, you are doing genuine research work, not just helping a maintainer polish a side project. The paper-two opportunities (architectural fix, multi-hop cascade dynamics) are real publishable work. The paper-three opportunities (user study, multilingual extension) are real publishable work. We aren't pretending the headline paper is the finished thing. We're saying it's the seed of a research program that needs more hands to grow.
+
+If you're looking for a polished open-source product to use in production, this isn't that yet. The detector works, but the 26-point gap means you should not deploy SIL as a sole arbiter of correctness in any high-stakes setting. It's an audit layer, not a guardrail.
+
+If you're looking for a credentialed lab attached to a big name, we are not that. Plutas Lab is an independent research outfit based in Bangalore. The work stands on what it shows, not on where it came from. That's a feature for some contributors and a problem for others.
+
+We'd rather you decide to contribute knowing all of this than have you find out later that the marketing oversold the work. Research moves on honest priors. So does open source.
+
 ## Before you contribute
 
 Read the paper. Without context on Intent Corruption and the 12-category ICOR taxonomy, contributions will miss the point. Start with [paper/draft_v1.md](paper/draft_v1.md) or the PDF in [paper/intent_corruption_paper_plutaslab.pdf](paper/intent_corruption_paper_plutaslab.pdf). The short version is in [docs/PAPER.md](docs/PAPER.md).
