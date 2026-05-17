@@ -1,0 +1,6 @@
+intent,n,flag_rate,n_block,n_warn,n_pass
+meaning-changed,400,0.7475,281,18,101
+fluency,400,0.08,31,1,368
+coherence,272,0.5625,139,14,119
+clarity,400,0.4175,144,23,233
+style,100,0.37,33,4,63

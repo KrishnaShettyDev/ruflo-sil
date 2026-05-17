@@ -1,0 +1,72 @@
+{
+  "name": "ruflo-sil",
+  "version": "0.1.0",
+  "displayName": "SIL — Semantic Intent Layer",
+  "description": "Detects intent corruption in AI-mediated writing. Prevents polarity flips, tone shifts, commitment distortion, and other silent meaning changes when AI rewrites human text. Integrates with ruflo's agentdb, hooks, federation, and MCP server.",
+  "author": "Plutas Lab",
+  "license": "MIT",
+  "homepage": "https://github.com/plutaslab/ruflo-sil",
+  "repository": "https://github.com/plutaslab/ruflo-sil",
+  "keywords": [
+    "intent-corruption",
+    "semantic-intent",
+    "pragmatic-alignment",
+    "nli",
+    "ai-safety",
+    "writing-assistant",
+    "ruflo-plugin"
+  ],
+  "engines": {
+    "ruflo": ">=3.5.0",
+    "node": ">=20.0.0"
+  },
+  "mcp": {
+    "server": "src/mcp/server.ts",
+    "tools": [
+      "sil_score",
+      "sil_score_batch",
+      "sil_score_pipeline",
+      "sil_explain",
+      "sil_correct",
+      "sil_audit_session",
+      "sil_get_user_profile",
+      "sil_set_threshold"
+    ]
+  },
+  "hooks": {
+    "preEdit": "src/hooks/pre-edit.ts",
+    "postGenerate": "src/hooks/post-generate.ts",
+    "preCommit": "src/hooks/pre-commit.ts"
+  },
+  "agents": [
+    {
+      "id": "sil-monitor",
+      "role": "Intercepts AI-mediated edits across the swarm and computes intent-divergence risk in real time",
+      "model": "auto"
+    },
+    {
+      "id": "sil-corrector",
+      "role": "Proposes minimum-edit corrections that restore user intent when SIL flags high-risk modifications",
+      "model": "auto"
+    },
+    {
+      "id": "sil-auditor",
+      "role": "Runs deployment audits over agent swarms to measure recursive semantic drift across hops",
+      "model": "auto"
+    }
+  ],
+  "permissions": [
+    "agentdb:read",
+    "agentdb:write",
+    "memory:read",
+    "memory:write",
+    "federation:audit",
+    "hooks:register",
+    "mcp:expose"
+  ],
+  "categories": [
+    "ai-safety",
+    "writing",
+    "observability"
+  ]
+}
