@@ -1,0 +1,54 @@
+# Issue and PR labels for ruflo-sil.
+# Apply with a tool like github-label-sync, or create manually in the GitHub UI.
+
+- name: priority/high
+  color: b60205
+  description: Paper-critical work. Top of the queue.
+
+- name: priority/medium
+  color: d93f0b
+  description: System improvement. Not paper-critical.
+
+- name: priority/low
+  color: fbca04
+  description: Exploration. Not blocking anything.
+
+- name: bug
+  color: d73a4a
+  description: Something is broken.
+
+- name: enhancement
+  color: a2eeef
+  description: New feature or capability.
+
+- name: research
+  color: 5319e7
+  description: Methodological or research question.
+
+- name: documentation
+  color: 0075ca
+  description: Docs only.
+
+- name: good-first-issue
+  color: 7057ff
+  description: Suitable for new contributors.
+
+- name: help-wanted
+  color: 008672
+  description: Actively looking for someone to take this.
+
+- name: paper-2
+  color: 1d76db
+  description: Relates to the architectural-fix follow-up paper.
+
+- name: paper-3
+  color: 0e8a16
+  description: Relates to the cascade-dynamics follow-up paper.
+
+- name: wontfix
+  color: ffffff
+  description: Explicitly declined. See comment for reason.
+
+- name: duplicate
+  color: cfd3d7
+  description: See linked issue.
