@@ -4,15 +4,15 @@ Thanks to everyone who has contributed to ruflo-sil. If your name is missing, op
 
 ## Core team
 
-- Plutas Lab (Bangalore, India) — project origination, paper authorship
+- Plutas Lab (Bangalore, India): project origination, paper authorship
 
 ## Paper acknowledgments
 
-- Ruchitha — for the original conversation that started this work (see Figure 1 of the paper)
+- Ruchitha, for the original conversation that started this work (see Figure 1 of the paper)
 
 ## Code contributors
 
-(none yet — be the first)
+(none yet. Be the first.)
 
 ## Data and benchmark contributors
 
