@@ -38,6 +38,14 @@ The 26-point gap is the honest number. SIL catches 75% of real meaning-changing 
 
 Reports: [benchmark/data/BENCH_REPORT.md](benchmark/data/BENCH_REPORT.md), [benchmark/iterater/data/iterater_report.md](benchmark/iterater/data/iterater_report.md). Paper: [paper/draft_v1.md](paper/draft_v1.md).
 
+## Honest scope
+
+SIL works. It is not done. We have not solved intent corruption. We named one slice of it and shipped a working detector for that slice. The 26-point gap above is real and we made it the headline of the paper instead of hiding it.
+
+Five publishable papers worth of work sit in the gaps: taxonomy saturation, paraphrase-aware NLI reweighting, multi-hop cascade dynamics, user studies, multilingual extension. The detector is an audit layer, not a guardrail. Don't deploy it as the sole arbiter of correctness in any high-stakes setting.
+
+For the full version (what's real, what's overhyped including by us, what we'd say if we were peer-reviewing this ourselves) read [CONTRIBUTING.md](CONTRIBUTING.md#what-this-project-is-and-isnt). If you want to help close the gap, the same file tells you exactly where.
+
 ## Quick start
 
 ```bash
